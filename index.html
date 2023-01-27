@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>form</title>
+	<style>
+body{
+background-image:radial-gradient(circle at 30% 90%, white, blue);
+margin:0;	
+}
+.form{
+height:calc(100vh);
+display:flex;
+}
+input[type="text"], input[type="password"]{
+width:200px;
+height:30px;
+font-size:20px;
+border-radius:5px;
+border:none;
+padding:0 0 0 30px;
+}
+.entrance div{
+margin:0 0 30px;}
+
+.submit{
+padding:10px 30px;
+background:#1FAEE9;
+border:none;
+border-bottom:5px solid beige;
+border-radius:5px;
+}
+.submit:hover{
+background:beige;
+transition:all 0.3s }
+
+a:hover{
+text-decoration:none
+}
+::input-placeholder{
+color:red}
+
+.entrance{
+width:300px;
+height:400px;
+margin:auto;
+text-align:center;
+border-top:5px solid beige}
+
+input[placeholder]{text-overflow:ellipsis}
+img{
+border-radius:50%;
+margin:-60px 0 -10px 0;
+border-top:5px solid beige}
+
+
+	</style>
+</head>
+<body>
+	<div class="form">
+		<div class="entrance"	
+			<form action="mailto:bees127@ukr.net" enctype="text/plain" >
+			<div>
+				<img src="сайт_game/pictures/d.jpg">
+			</div>
+				<div>
+					<input type="text" placeholder="Логин">
+				</div>
+				<div>
+					<input type="password" placeholder="Пароль">
+				</div>
+				<div>
+					<input class="submit" type="submit" value="войти">
+				</div>
+				<a href="#">Забыли пароль?</a>
+			</form>
+		</div>	
+	</div>
+</body>
+</html>
