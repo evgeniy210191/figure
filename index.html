@@ -1,80 +1,468 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
+	<title>cube</title>
 	<meta charset="utf-8">
-	<title>form</title>
 	<style>
-body{
-background-image:radial-gradient(circle at 30% 90%, white, blue);
-margin:0;	
+.content{
+	width:700px;
+	margin:0 auto;
+	text-align:center;
+	background:rgb(141, 156, 7);
+	padding:50px;
 }
-.form{
-height:calc(100vh);
-display:flex;
+
+
+.base{
+	position:relative;
+	min-height:300px;
+	margin:100px auto;
+	display:flex;
+	align-items:center;
+	justify-content:space-around;
+	}
+.zvz{
+	position:absolute;
+	width:200px;
+	height:200px;
+	background:red;
+	left:35%
 }
-input[type="text"], input[type="password"]{
-width:200px;
-height:30px;
-font-size:20px;
-border-radius:5px;
-border:none;
-padding:0 0 0 30px;
+.tri{
+	border-left:100px solid transparent;
+	border-right:100px solid transparent;
+	border-bottom:100px solid red;
+	width:0;
 }
-.entrance div{
-margin:0 0 30px;}
-
-.submit{
-padding:10px 30px;
-background:#1FAEE9;
-border:none;
-border-bottom:5px solid beige;
-border-radius:5px;
+.tri1{
+	border-left:100px solid transparent;
+	border-right:100px solid transparent;
+	border-bottom:200px solid red;
+	width:0;
+	position:absolute;
+	transform:translatey(-30%)
 }
-.submit:hover{
-background:beige;
-transition:all 0.3s }
-
-a:hover{
-text-decoration:none
+.tri2{
+	border-left:100px solid transparent;
+	border-right:100px solid transparent;
+	border-top:200px solid red;
+	width:0;
+	position:absolute;
+		
 }
-::input-placeholder{
-color:red}
 
-.entrance{
-width:300px;
-height:400px;
-margin:auto;
-text-align:center;
-border-top:5px solid beige}
+.a{
+	transform:rotatez(30deg)
+}
+.b{
+	transform:rotatez(60deg)
+}
 
-input[placeholder]{text-overflow:ellipsis}
-img{
-border-radius:50%;
-margin:-60px 0 -10px 0;
-border-top:5px solid beige}
+.kut{
+	border-left:75px solid transparent;
+	border-right:75px solid transparent;
+	border-top:200px solid red;
+	width:200px;
+	position:relative;
+}
+.kut:before{
+	content:"";
+	border-left:175px solid transparent;
+	border-right:175px solid transparent;
+	border-bottom:150px solid red;
+	position:absolute;
+	bottom:200%;
+	left:0;
+	transform:translate(-75px,-200px);
+}
 
+.kut6{
+	width:200px;
+	height:100px;
+	background:red;
+	position:relative;
+}
+.kut6:before{
+	content:"";
+	width:0;
+	border-left:100px solid transparent;
+	border-right:100px solid transparent;
+	border-bottom:60px solid red;
+	position:absolute;
+	bottom:100%;
+	left:0;
+}
+.kut6:after{
+	content:"";
+	width:0;
+	border-left:100px solid transparent;
+	border-right:100px solid transparent;
+	border-top:60px solid red;
+	position:absolute;
+	top:100%;
+	left:0;
+}
+.kut8{
+	width:350px;
+	height:150px;
+	background:red;
+	position:relative;
+}
+.kut8:before{
+	content:"";
+	width:150px;
+	border-left:100px solid transparent;
+	border-right:100px solid transparent;
+	border-bottom:100px solid red;
+	position:absolute;
+	bottom:100%;
+	left:0;
+}
+.kut8:after{
+	content:"";
+	position:absolute;
+	width:150px;
+	border-left:100px solid transparent;
+	border-right:100px solid transparent;
+	border-top:100px solid red;
+	top:100%;
+	left:0;
+}
+.serdze{
+	height:250px;
+	width:150px;
+	position:relative;
+	transform:rotatez(45deg);
+	border-radius:50% 50% 0 0/30% 30% 0 0 ;
+	background:red;
+	margin:0 auto;
+}
+.serdze:before{
+	content:"";
+	height:250px;
+	width:150px;
+	position:absolute;
+	transform:rotatez(-90deg);
+	background:red;
+	top:50px;
+	right:50px;
+	border-radius:50% 50% 0 0/30% 30% 0 0
+}
+.infinity{
+	border:50px solid red;
+	transform:rotateZ(45deg) translate(-100%);
+	position:relative;
+	border-radius:50% 0 50% 50%;
+	width:200px;
+	height:200px;
+	background:transparent;
+
+	}
+.infinity:before{
+	content:"";
+	position:absolute;
+	width:200px;
+	height:200px;
+	border-radius:50% 0 50% 50%;
+	background:transparent;
+	transform:rotateZ(180deg);
+	border:50px solid red;
+	bottom:100%;
+	left:100%
+}
+.egg{
+	width:300px;
+	height:150px;
+	border-radius:50%;
+	border-top:100px solid yellow;
+	border-bottom:100px solid green;
+	background:red;
+}
+.circle{
+	width:0;
+	border-top:100px solid red;
+	border-bottom:100px solid red;
+	border-left:100px solid red;
+	border-right:100px solid transparent;
+	border-radius:50%
+}
+.choto{
+	width:300px;
+	height:300px;
+	border-radius:50px;
+	position:relative;
+	background:red;
+}
+.choto:before{
+	content:"";
+	width:75px;
+	height:75px;
+	border-radius:50%;
+	position:absolute;
+	bottom:15%;
+	left:15%;
+	background:white;
+	z-index:1
+}
+.choto:after{
+	content: '';
+    display: block;
+    background: #ffff00;
+    width: 12em;
+    height: 12em;
+    top: 4em;
+    left: 2.8em;
+    border-radius: 2.5em;
+    position: relative;
+    box-shadow:
+      -2em 2em 0 0 #fff inset,
+	  -4em 4em 4em 0 #ff0000 inset
+  }
+.een_yan{
+      width: 248px;
+      box-sizing: content-box;
+      height: 122px;
+      background: #fff;
+      border-color: red;
+      border-style: solid;
+      border-width: 2px 2px 125px 2px;
+      border-radius: 100%;
+      position: relative;
+    }
+.een_yan:before{
+	content:"";
+	width:10%;
+	height:20%;
+	background:white;
+	border-radius:50%;
+	border:3.1em solid red;
+	position:absolute;
+	top:47%;
+	left:0;
+}
+.een_yan:after{
+	content:"";
+	width:10%;
+	height:20%;
+	background:red;
+	border-radius:50%;
+	border:3.1em solid white;
+	position:absolute;
+	top:47%; 
+	right:0;
+}
+.jaba{
+	height:25px;
+	width:25px;
+	background:black;
+	box-shadow:25px 25px 0 0 red,
+	25px 0 0 red,
+	0 25px 0 0 red,
+	0 -25px 0 0 red,
+	25px -25px 0 0 red,
+	-25px -25px 0 0 red,
+	-25px 0 0 0 red,
+	-25px 25px 0 0 red;
+}
+.mes{
+	width:150px;
+	height:200px;
+	border-radius:50%;
+	box-shadow:15px 0 0 0 red
+}
+.mess{
+	border-top:100px solid red;
+	border-left:100px solid red;
+	border-right:100px solid red;
+	border-bottom:50px solid transparent;
+}
+.ice{
+	border-bottom:100px solid transparent;
+	border-top:100px solid red;
+	border-left:100px solid transparent;
+	border-right:100px solid transparent;
+	border-radius:50%;
+}
+.arrow{
+	border-left:300px solid red;
+	border-right:50px solid transparent;
+	border-bottom:50px solid red;
+	border-top:50px solid red;
+	position:relative;
+	}
+.arrow:before{
+	content:"";
+	border-right:50px solid red;
+	border-bottom:50px solid transparent;
+	border-top:50px solid transparent;
+	height:0;
+	position:absolute;
+	right:300px;
+	bottom:-50px;
+}
+
+.ship{
+	background:radial-gradient(circle at 15% 50%,blue 8px,transparent 8px),
+	radial-gradient(circle at 30% 50%,blue 8px,transparent 8px),
+	radial-gradient(circle at 45% 50%,blue 8px,transparent 8px),
+	radial-gradient(circle at 60% 50%,blue 8px,transparent 8px),
+	conic-gradient(at right top,transparent 62.5%,red 62.5%),
+	linear-gradient(to left,transparent 100px,red 100px);
+	transform:translateY(150%);
+	width:400px;
+	height:100px;
+	position:relative;
+	
+	bottom:0
+}
+.ship:before{
+	border-right:100px solid red;
+	border-bottom:50px solid transparent;
+	border-top:100px solid transparent;
+	content:"";
+	position:absolute;
+	left:-100px;
+	top:-50px;
+}
+.ship:after{
+	content:"";
+	border-bottom:50px solid red;
+	border-left:50px solid transparent;
+	border-right:50px solid transparent;
+	width:0;
+	position:absolute;
+	top:-50px;
+	right:-0;
+}
+.parus{
+	position:absolute;
+	top:-200px;
+	left:40%;
+	height:150px;
+	border-left:25px solid red;
+	border-top:50px solid red;
+	border-right:50px solid transparent;
+}
+.parus:before{
+	content:"";
+	border-right:50px solid transparent;
+	border-bottom:50px solid red;
+	height:0;
+	position:absolute;
+	top:-50px;
+	left:0;
+}
+.parus:after{
+	content:"";
+	position:absolute;
+	height:200px;
+	width:120px;
+	border-radius:70% 30% 0 70%;
+	top:-50px;
+	right:-50px;
+	border-left:25px solid red;
+}
+
+.parus1{
+	position:relative;
+	height:150px;
+	width:100px;
+	bottom:150px;
+	right:-184px;
+	background:conic-gradient(at right,transparent 65%,
+	red 65% 85%,transparent 85%);
+}
+.paddle{
+	width:5px;
+	height:80px;
+	position:absolute;
+	background:#d3de2d;
+	transform:rotateZ(-30deg);
+	transform-origin:50% 0 0;
+	top:56%;
+	left:59px;
+	border-radius:50% 50% 0 0;
+	box-shadow:52px 30px 0 0 #d3de2d,
+	104px 60px 0 0 #d3de2d,
+	156px 90px 0 0 #d3de2d;
+}
+.paddle:before{
+	content:"";
+	background:#d3de2d;
+	width:10px;
+	height:20px;
+	position:absolute;
+	top:99.5%;
+	left:-50%;
+	box-shadow:52px 30px 0 0 #d3de2d,
+	104px 60px 0 0 #d3de2d,
+	156px 90px 0 0 #d3de2d;
+}
 
 	</style>
 </head>
 <body>
-	<div class="form">
-		<div class="entrance"	
-			<form action="mailto:bees127@ukr.net" enctype="text/plain" >
-			<div>
-				<img src="сайт_game/pictures/d.jpg">
-			</div>
-				<div>
-					<input type="text" placeholder="Логин">
-				</div>
-				<div>
-					<input type="password" placeholder="Пароль">
-				</div>
-				<div>
-					<input class="submit" type="submit" value="войти">
-				</div>
-				<a href="#">Забыли пароль?</a>
-			</form>
-		</div>	
+<div class="content">
+	<div class="base">
+	<div style="width:700px;height:300px">
+		<div class="zvz a"></div>
+		<div class="zvz b"></div>
+		<div class="zvz c"></div>
 	</div>
+	</div>
+	<div class="base">
+		<div class="tri1"></div>
+		<div class="tri2"></div>
+	</div>
+	<div class="base">
+		<div class="kut"></div>
+	</div>
+	<div class="base">
+		<div class="kut6"></div>
+	</div>
+	<div class="base">
+		<div class="kut8"></div>
+	</div>
+	<div class="base">
+		<div class="serdze"></div>
+	</div>
+	<div class="base">
+		<div class="infinity"></div>
+	</div>
+	<div class="base">
+		<div class="egg"></div>
+	</div>
+	<div class="base">
+		<div class="circle"></div>
+	</div>
+	<div class="base">
+		<div class="choto"></div>
+	</div>
+	<div class="base">
+		<div class="een_yan"></div>
+	</div>
+	<div class="base">
+		<div class="jaba"></div>
+	</div>
+	<div class="base">
+		<div class="mes"></div>
+	</div>
+	<div class="base">
+		<div class="mess"></div>
+	</div>
+	<div class="base">
+		<div class="ice"></div>
+	</div>
+	<div class="base">
+		<div class="arrow"></div>
+	</div>
+	<div class="base">
+		<div class="ship">
+			<div class="parus"></div>
+			<div class="parus1"></div>
+			<div class="paddle"></div>
+		</div>
+	</div>
+</div>	
 </body>
 </html>
